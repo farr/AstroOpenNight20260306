@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="referrer" content="origin">
 
 		<title>Ringing Black Hole Bells</title>
 
@@ -96,7 +97,7 @@
 
 						---
 						<iframe width="900" height="506" src="https://www.youtube.com/embed/kkKDs59zcdI" title="GW150914: Gravitational waves from LIGO&#39;s first detection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+						
 						<span class="attribution"><a href="https://ligo.org/multimedia/">LIGO / SXS</a></span>
 
 						---
@@ -282,6 +283,29 @@
 		<script src="plugin/highlight/highlight.js"></script>
 		<script src="plugin/math/math.js"></script>
 		<script>
+			(function configureYouTubeEmbeds() {
+				var isHttp = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+				var iframes = document.querySelectorAll('iframe[src*="youtube.com/embed/"], iframe[src*="youtube-nocookie.com/embed/"]');
+
+				for( var i = 0; i < iframes.length; i++ ) {
+					var iframe = iframes[i];
+					var url = new URL(iframe.src, window.location.href);
+
+					url.searchParams.set('rel', '0');
+					url.searchParams.set('playsinline', '1');
+
+					if( isHttp ) {
+						url.searchParams.set('origin', window.location.origin);
+					}
+
+					iframe.src = url.toString();
+				}
+
+				if( !isHttp ) {
+					console.warn('YouTube embeds may fail with Error 153 on file:// URLs. Run via a local web server (for example: npm start).');
+				}
+			})();
+
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
