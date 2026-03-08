@@ -11,7 +11,7 @@
 
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/reveal.scss" />
-		<link rel="stylesheet" href="css/theme/black.scss" />
+		<link rel="stylesheet" href="css/theme/serif.scss" />
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
@@ -35,11 +35,7 @@
 
 						[Will M. Farr](https://farr.github.io)
 
-						Stony Brook University 
-
-						&
-
-						Center for Computational Astrophysics <br />
+						Stony Brook University <br /> Center for Computational Astrophysics <br />
 
 						<img src="images/QR.png" height="150" width="150" /> <a href="https://github.com/farr/AstroOpenNight20260306"><img src="images/github-mark.svg" height="150" width="150" /></a>
 
@@ -81,9 +77,9 @@
 						<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UA1qG7Fjc2A?si=XtHGZc4tkeMg8mfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 						---
-						`$f_{\mathrm{GW},\mathrm{ISCO}} = 200 \, \mathrm{Hz} \frac{10 M_\odot}{M}$` <!-- .element: class="fragment"-->
+						$f_{\mathrm{GW},\mathrm{ISCO}} = 200 \, \mathrm{Hz} \frac{10 M_\odot}{M}$ <!-- .element: class="fragment"-->
 
-						`$h = \mathcal{O}\left(1 \right) \frac{r_\mathrm{Schw}}{r} \simeq 2 \times 10^{-22} \, \frac{M}{10 M_\odot} \, \frac{10 Gpc}{r}$` <!-- .element: class="fragment"-->
+						$h = \mathcal{O}\left(1 \right) \frac{r_\mathrm{Schw}}{r} \simeq 2 \times 10^{-22} \, \frac{M}{10 M_\odot} \, \frac{10 Gpc}{r}$ <!-- .element: class="fragment"-->
 
 						<img class="r-stretch" src="images/detection-figure3.png" />
 
@@ -165,7 +161,7 @@
 
 						<img src="images/LymanSeries.svg" class="r-stretch" />
 
-						`$$\frac{1}{\lambda} = R_H \left( 1 - \frac{1}{n^2} \right)$$`
+						$$\frac{1}{\lambda} = R_H \left( 1 - \frac{1}{n^2} \right)$$
 
 						<span class="attribution"><a href="https://en.wikipedia.org/wiki/Lyman_series">Wikipedia</a></span>
 
@@ -194,7 +190,7 @@
 						---
 						<img src="images/LymanSeries.svg" class="r-stretch" />
 
-						`$$\frac{1}{\lambda} = R_H \left( 1 - \frac{1}{n^2} \right)$$`
+						$$\frac{1}{\lambda} = R_H \left( 1 - \frac{1}{n^2} \right)$$
 
 						<span class="attribution"><a href="https://en.wikipedia.org/wiki/Lyman_series">Wikipedia</a></span>
 
@@ -301,20 +297,24 @@
 			</div>
 		</div>
 
-		<script type="module">
-			import Reveal from 'reveal.js';
-			import RevealNotes from 'reveal.js/plugin/notes';
-			import RevealMarkdown from 'reveal.js/plugin/markdown';
-			import RevealHighlight from 'reveal.js/plugin/highlight';
+			<script type="module">
+				import Reveal from 'reveal.js';
+				import RevealNotes from 'reveal.js/plugin/notes';
+				import RevealMarkdown from 'reveal.js/plugin/markdown';
+				import RevealHighlight from 'reveal.js/plugin/highlight';
+				import RevealMath from 'reveal.js/plugin/math';
 
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				katex: {
+					local: 'node_modules/katex'
+				},
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
 			});
 		</script>
 	</body>
