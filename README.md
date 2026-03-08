@@ -13,3 +13,30 @@ HTTP instead of opening `index.html` directly:
 npm install
 npm start
 ```
+
+## Offline KaTeX for local-only use
+
+The checked-in `index.html` uses CDN-hosted KaTeX so GitHub Pages works.
+If you want local rendering with no internet connectivity, edit the
+`Reveal.initialize(...)` config in `index.html` and change:
+
+```js
+katex: {
+  version: "0.16.37"
+}
+```
+
+to:
+
+```js
+katex: {
+  local: "node_modules/katex"
+}
+```
+
+Then run:
+
+```sh
+npm install
+npm start
+```
