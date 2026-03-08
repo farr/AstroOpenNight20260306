@@ -1,18 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="referrer" content="origin">
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 
 		<title>Ringing Black Hole Bells</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/serif.css">
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/reveal.scss" />
+		<link rel="stylesheet" href="css/theme/black.scss" />
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
 		<!-- Attributions for citations, etc. -->
 		<style>
@@ -299,44 +301,20 @@
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script src="plugin/math/math.js"></script>
-		<script>
-			(function configureYouTubeEmbeds() {
-				var isHttp = window.location.protocol === 'http:' || window.location.protocol === 'https:';
-				var iframes = document.querySelectorAll('iframe[src*="youtube.com/embed/"], iframe[src*="youtube-nocookie.com/embed/"]');
-
-				for( var i = 0; i < iframes.length; i++ ) {
-					var iframe = iframes[i];
-					var url = new URL(iframe.src, window.location.href);
-
-					url.searchParams.set('rel', '0');
-					url.searchParams.set('playsinline', '1');
-
-					if( isHttp ) {
-						url.searchParams.set('origin', window.location.origin);
-					}
-
-					iframe.src = url.toString();
-				}
-
-				if( !isHttp ) {
-					console.warn('YouTube embeds may fail with Error 153 on file:// URLs. Run via a local web server (for example: npm start).');
-				}
-			})();
+		<script type="module">
+			import Reveal from 'reveal.js';
+			import RevealNotes from 'reveal.js/plugin/notes';
+			import RevealMarkdown from 'reveal.js/plugin/markdown';
+			import RevealHighlight from 'reveal.js/plugin/highlight';
 
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-				slideNumber: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
 			});
 		</script>
 	</body>
